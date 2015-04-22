@@ -30,8 +30,8 @@ case `uname` in
 	exit -1
 esac
 
-GITREPO=${GITREPO:-"git://github.com/mozilla-b2g/b2g-manifest"}
-BRANCH=${BRANCH:-master}
+GITREPO=${GITREPO:-"git://github.com/MozOpenHard/b2g-manifest"}
+BRANCH=${BRANCH:-mozopenhard-v2.1}
 
 while [ $# -ge 1 ]; do
 	case $1 in
@@ -186,6 +186,13 @@ case "$1" in
 	repo_sync aries
 	;;
 
+"chirimen")
+	echo DEVICE=rk3066 >> .tmp-config &&
+	echo PRODUCT_NAME=rk3066 >> .tmp-config &&
+	echo LUNCH=rk3066-userdebug >> .tmp-config &&
+	repo_sync chirimen
+	;;
+
 *)
 	echo "Usage: $0 [-cdflnq] (device name)"
 	echo "Flags are passed through to |./repo sync|."
@@ -219,6 +226,7 @@ case "$1" in
 	echo - rpi "(Revision B)"
 	echo - shinano
 	echo - aries
+	echo - chirimen
 	echo - emulator
 	echo - emulator-jb
 	echo - emulator-kk
