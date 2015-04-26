@@ -187,9 +187,9 @@ case "$1" in
 	;;
 
 "chirimen")
-	echo DEVICE=rk3066 >> .tmp-config &&
-	echo PRODUCT_NAME=rk3066 >> .tmp-config &&
-	echo LUNCH=rk3066-userdebug >> .tmp-config &&
+	echo DEVICE=chirimen >> .tmp-config &&
+	echo PRODUCT_NAME=chirimen >> .tmp-config &&
+	echo LUNCH=chirimen-userdebug >> .tmp-config &&
 	repo_sync chirimen
 	;;
 
