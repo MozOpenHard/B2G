@@ -403,6 +403,13 @@ case "$DEVICE" in
 	flash_heimdall $PROJECT
 	;;
 
+"chirimen")
+  cp device/rockchip/rksdk/buildspec-chirimen.mk ./buildspec.mk
+  device/rockchip/rksdk/mkimage.sh
+  rm ./buildspec.mk
+  rkst/mkkrnlimg out/target/product/chirimen/kernel rockdev/Image/kernel.img
+  ;;
+
 *)
 	if [[ $(type -t flash_${DEVICE}) = function ]]; then
 		flash_${DEVICE} $PROJECT
