@@ -30,7 +30,7 @@ case `uname` in
 	exit -1
 esac
 
-GITREPO=${GITREPO:-"git://github.com/chirimen-org/b2g-manifest"}
+GITREPO=${GITREPO:-"git://github.com/chirimen-oh/b2g-manifest"}
 BRANCH=${BRANCH:-chirimen-v2.5-no_seccomp}
 
 while [ $# -ge 1 ]; do
@@ -152,7 +152,7 @@ case "$1" in
 	echo DEVICE=vixen >> .tmp-config &&
 	echo PRODUCT_NAME=vixen >> .tmp-config &&
 	repo_sync $1
-	;;  
+	;;
 
 "emulator"|"emulator-jb"|"emulator-kk"|"emulator-l")
 	echo DEVICE=generic >> .tmp-config &&
